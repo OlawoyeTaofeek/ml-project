@@ -3,7 +3,7 @@ from typing import List
 
 def get_packages(file_path: str) -> List[str]:
     """
-    Retrieve all package dependencies from a requirements.txt file.
+    ### Retrieve all package dependencies from a requirements.txt file.
 
     Args:
         file_path (str): Path to the requirements.txt file.
