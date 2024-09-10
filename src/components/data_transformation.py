@@ -22,7 +22,12 @@ class DataTransformation:
         
     def get_data_transformer_object(self):
         try:
-            pass
+            numerical_columns = ['writing_score', 'reading_score', 'math_score']
+            categorical_columns = [
+                "gender", "race_ethnicity",
+                'parental_level_of_education',
+                'lunch', 'test_preparation_course',    
+            ]
         except:
             pass
 
