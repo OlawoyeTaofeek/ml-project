@@ -8,7 +8,7 @@ from sklearn.impute import SimpleImputer
 from sklearn.pipeline import Pipeline
 from sklearn.preprocessing import OneHotEncoder,StandardScaler
 
-from src.exception import CustomException
+from src.exceptions import CustomException
 from src.logger import logging
 import os
 
@@ -109,10 +109,8 @@ class DataTransformation:
             logging.info(f"Saved preprocessing object.")
 
             save_object(
-
                 file_path=self.data_transformation_config.preprocessor_obj_file_path,
                 obj=preprocessing_obj
-
             )
 
             return (
