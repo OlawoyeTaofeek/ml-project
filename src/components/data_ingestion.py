@@ -24,6 +24,7 @@ class DataIngestion:
             df = pd.read_csv("/Users/virtue/Desktop/ml_project/src/notebooks/data/stud.csv")
             logging.info("Dataset read correctly into DataFrame")
             os.makedirs(os.path.dirname(self.Ingestion_config.TRAIN_DATA_PATH), exist_ok=True)
+            os.makedirs(os.path.dirname(self.Ingestion_config.TEST_DATA_PATH), exist_ok=True)
             df.to_csv(self.Ingestion_config.RAW_DATA_PATH, index=False, header=False)
             
             logging.info("Train test split Initiating!!")
