@@ -26,7 +26,7 @@ class DataTransformation:
         '''
         This function si responsible for data trnasformation
         
-        '''
+        ''' 
         try:
             numerical_columns = ["writing_score", "reading_score"]
             categorical_columns = [
@@ -115,7 +115,7 @@ class DataTransformation:
 
             return (
                 train_arr,
-                test_arr,
+                test_arr, 
                 self.data_transformation_config.preprocessor_obj_file_path,
             )
         except Exception as e:
