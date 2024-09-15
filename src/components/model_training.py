@@ -6,7 +6,6 @@ from sklearn.ensemble import (
 )
 from catboost import CatBoostRegressor
 from sklearn.linear_model import LinearRegression
-from sklearn.neighbors import KNeighborsRegressor
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.metrics import r2_score, mean_absolute_error
 from xgboost import XGBRegressor
@@ -27,7 +26,7 @@ class ModelTrainer:
     def __init__(self):
         self.model_trainer_config = ModelTrainerConfig()
         
-    def initiate_model_trainer(self, train_array, test_array, preprocessor_path):
+    def initiate_model_trainer(self, train_array, test_array):
         try:
             logging.info("Split train and test input data")
             X_train, y_train, X_test, y_test = (train_array[:, :-1],
@@ -38,11 +37,10 @@ class ModelTrainer:
             models = {
                 "Random Forest": RandomForestRegressor(),
                 "Decision Tree": DecisionTreeRegressor(),
-                "Gradient Boost": GradientBoostingRegressor(),
+                "Gradient Boosting": GradientBoostingRegressor(),
                 "Linear Regression": LinearRegression(),
-                "K-Neighbor Regressor": KNeighborsRegressor(),
                 "Xgboost": XGBRegressor(),
-                "Adaboost": AdaBoostRegressor(),
+                "AdaBoost": AdaBoostRegressor(),
                 "CatBoost": CatBoostRegressor()
             }
             params={
@@ -66,16 +64,16 @@ class ModelTrainer:
                     'n_estimators': [8,16,32,64,128,256]
                 },
                 "Linear Regression":{},
-                "XGBRegressor":{
+                "Xgboost":{
                     'learning_rate':[.1,.01,.05,.001],
                     'n_estimators': [8,16,32,64,128,256]
                 },
-                "CatBoosting Regressor":{
+                "CatBoost":{
                     'depth': [6,8,10],
                     'learning_rate': [0.01, 0.05, 0.1],
                     'iterations': [30, 50, 100]
                 },
-                "AdaBoost Regressor":{
+                "AdaBoost":{
                     'learning_rate':[.1,.01,0.5,.001],
                     # 'loss':['linear','square','exponential'],
                     'n_estimators': [8,16,32,64,128,256]
