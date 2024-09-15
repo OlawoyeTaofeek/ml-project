@@ -1,4 +1,4 @@
-import logging # fopr tracking any error
+import logging # for tracking any error
 import os 
 from datetime import datetime
 
