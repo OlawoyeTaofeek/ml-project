@@ -64,6 +64,11 @@ db.sqlite3-journal
 # Flask stuff:
 instance/
 .webassets-cache
+flask
+
+# Fastapi stuff
+fastapi
+uvicorn
 
 # Scrapy stuff:
 .scrapy
